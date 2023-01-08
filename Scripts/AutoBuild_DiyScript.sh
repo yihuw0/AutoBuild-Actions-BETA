@@ -7,10 +7,10 @@ Firmware_Diy_Core() {
 	Author=AUTO
 	Author_URL=AUTO
 	Default_Flag=AUTO
-	Default_IP="192.168.1.1"
+	Default_IP="192.168.110.1"
 	Default_Title="Powered by AutoBuild-Actions"
 
-	Short_Fw_Date=true
+	Short_Fw_Date=false
 	x86_Full_Images=false
 	Fw_Format=false
 	Regex_Skip="packages|buildinfo|sha256sums|manifest|kernel|rootfs|factory|itb|profile|ext4|json"
@@ -71,6 +71,8 @@ EOF
 		AddPackage git other helloworld fw876 master
 		AddPackage git themes luci-theme-neobird thinktip main
 		AddPackage git other luci-app-smartdns pymumu lede
+		AddPackage git other luci-app-dnsfilter kiddin9 main
+		AddPackage git other luci-app-ipsec-vpnserver-manyusers waynesg master
 
 		case "${TARGET_BOARD}" in
 		ramips)
